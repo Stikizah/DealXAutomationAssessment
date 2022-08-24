@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="DealX Web - QA Automation Assessment" parallel="tests" thread-count="5" verbose="1">
+
+    <listeners>
+        <listener class-name="DealX.utilities.TestListener"/>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+    </listeners>
+
+    <test name="DealX Automation Chrome">
+        <parameter name="excelData" value="DealXTestData.xlsx"/>
+        <parameter name="browserType" value="chrome"/>
+        <parameter name="TurnBrowserLocation" value="On"/>
+        <parameter name="appURL" value="http://automationpractice.com/"/>
+        <classes>
+            <class name="tests.DealXBasePageTest"/>
+        </classes>
+    </test>
+
+</suite>
